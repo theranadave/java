@@ -33,7 +33,10 @@ public class UserInterface {
             result = 0;
         }
         
-        if (0 > result || result > 7) {
+        if (result == 99) {
+            System.out.println("Debug");
+            result = 99;
+        } else if (0 > result || result > 7) {
             System.out.println("Invalid Choice, defaulting to exit.");
             result = 0;
         }

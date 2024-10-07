@@ -39,6 +39,10 @@ public class App {
             case 7:
                 System.out.println("Print usernames/passwords for website.");
                 break;
+            case 99:
+                System.out.println("Dump data.");
+                CredentialManager.dumpData();
+                break;
             case 0:
                 System.out.println("Exit.");
                 break;

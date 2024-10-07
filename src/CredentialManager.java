@@ -114,4 +114,15 @@ public class CredentialManager {
         PasswordStore.removeData(website, username);
     }  
 
+    public static void dumpData(){
+        List<List<String>> data = PasswordStore.getData();  
+
+        for(List<String> entry: data){
+            System.out.println("User: "+entry.get(1)+
+            " Password: "+entry.get(2)+
+            "\n Found for website: "+ entry.get(0)); 
+        }  
+        return;
+    }  
+
 }
