@@ -17,15 +17,15 @@ public class App {
         switch (choice) {
             case 1:
                 System.out.println("Retrieve username/password for website.");
-                Credentials.retrieveCredentials();
+                CredentialManager.retrieveCredentials();
                 break;
             case 2:
                 System.out.println("Create username/password for a website.");
-                Credentials.createCredentials();
+                CredentialManager.createCredentials();
                 break;
             case 3:
                 System.out.println("Delete username/password for a website.");
-                Credentials.deleteCredentials();
+                CredentialManager.deleteCredentials();
                 break;
             case 4:
                 System.out.println("Change a username for a website.");
