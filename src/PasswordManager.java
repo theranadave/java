@@ -4,7 +4,7 @@ public class PasswordManager {
 	public static void main(String[] arg)
 	{
         PasswordManager pm=new PasswordManager();
-	    Scanner sc=new Scanner(System.in);
+	    Scanner sc = new Scanner(System.in);
 	    System.out.print("Enter user id : ");
 	    String userId=sc.nextLine();	
 	    System.out.println("Password for user id is : " + pm.getPassword(userId));

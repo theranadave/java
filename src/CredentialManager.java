@@ -1,13 +1,13 @@
 import java.util.Scanner;
-import PasswordStore;
+import PasswordStore.PasswordStore;
 import java.util.List;
 
 public class CredentialManager {
 
 	public static void main(String[] arg) {
-        String website = "ebay";
-        String username = "dave";
-        String password = "dave";
+        // String website = "ebay";
+        // String username = "dave";
+        // String password = "dave";
         //Credentials.retrieveCredentials();
         //PasswordStore.addData(website, username, password);
         //PasswordStore.removeData(website, username);
