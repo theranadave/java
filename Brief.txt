@@ -1,0 +1,11 @@
+Design a password storage system for a single user.
+
+Features:
+Will store a username and password for a website.
+Will store the username, password and website details in a single file.
+
+
+Additions:
+Use encryption
+Check password complexity
+Generate a password
