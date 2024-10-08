@@ -7,5 +7,6 @@ Will store the username, password and website details in a single file.
 
 Additions:
 Use encryption
+use hash
 Check password complexity
 Generate a password

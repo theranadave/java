@@ -1,11 +1,9 @@
 package Users;
 
 public class User {
-
     protected String username;
     protected String password;
     protected String auth_type;
-
 
     // Constructor to initialize username and password
     public User(String username, String password) {
