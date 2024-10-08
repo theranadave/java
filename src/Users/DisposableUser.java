@@ -33,6 +33,7 @@ public class DisposableUser extends User {
     
     public DisposableUser(String username, String password) {
         super(username, password);
+        this.auth_type = "disposable";
     }
 
     // Generate a new temporary username (e.g., username + random number)

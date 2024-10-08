@@ -4,7 +4,7 @@ public class SuperUser extends User {
 
     public SuperUser(String username, String password) {
         super(username, password);
-        //TODO Auto-generated constructor stub
+        this.auth_type = "super";
     }
     
     public String getNewUser() {

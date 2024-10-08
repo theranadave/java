@@ -4,7 +4,7 @@ public class AnonUser extends User {
 
     public AnonUser(String username, String password) {
         super(username, password);
-        //TODO Auto-generated constructor stub
+        this.auth_type = "anon";
     }
 
     public String getNewUser() {

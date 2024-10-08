@@ -3,7 +3,7 @@ package Users;
 public class UniqueUser extends User {
     public UniqueUser(String username, String password) {
         super(username, password);
-        //TODO Auto-generated constructor stub
+        this.auth_type = "unique";
     }
 
     public String getNewUser() {
