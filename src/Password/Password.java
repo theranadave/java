@@ -4,12 +4,16 @@ public class Password {
 
 
     // Check password complexity
-    public static boolean checkPasswordComplexity(String password, 
-                                                    int minimumLength, 
-                                                    boolean specialChar) {
+
+    public static boolean checkPasswordComplexity(String password) {
+        return checkPasswordComplexity(password, 8);
+
+    }
+
+    public static boolean checkPasswordComplexity(String password, int minimumLength) {
         // Check for minimum length
         if (password.length() < minimumLength) {
-
+            System.out.println("Warning: Password is less than " + minimumLength + " characters.");
             return false;
         }
 
