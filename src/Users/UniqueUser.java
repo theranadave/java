@@ -15,7 +15,7 @@ public class UniqueUser extends User {
     public String getNewPassword() {
         //create tmp password
         String pass =  PasswordGenerator.generatePassword(false);
-        setPassword(tempPassword);        
+        setPassword(pass);        
         return pass;
     }
 }

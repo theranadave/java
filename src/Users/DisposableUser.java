@@ -23,12 +23,14 @@ public class DisposableUser extends User {
 
         System.out.println("Temporary Username: " + newUsername);
         System.out.println("Temporary Password: " + newPassword);
+        System.out.println("Temp User Details: " + tempUser.getUserDetails());
 
         newUsername = tempUser.getNewUser("dave");
         newPassword = tempUser.getNewPassword(8);
 
         System.out.println("Temporary Username: " + newUsername);
         System.out.println("Temporary Password: " + newPassword);
+        System.out.println("Temp User Details: " + tempUser.getUserDetails());
 
     }
     
@@ -78,7 +80,6 @@ public class DisposableUser extends User {
     private String generateRandomPassword(int length) {
         byte[] randomBytes = new byte[length];
         RANDOM.nextBytes(randomBytes);
-        // Encoding as a base64 string for readability
         return Base64.getEncoder().encodeToString(randomBytes).substring(0,length); 
     }
 }
