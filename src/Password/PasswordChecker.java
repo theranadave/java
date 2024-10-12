@@ -1,26 +1,25 @@
 package Password;
 
-public class Password {
+public class PasswordChecker {
 
     public static void main(String[] args) {
         String password = "SecurePass123!";
 
         // Check password complexity
-        if (Password.checkPasswordComplexity(password)) {
+        System.out.println(password);
+        if (PasswordChecker.checkPasswordComplexity(password)) {
             System.out.println("Password meets complexity requirements.");
         } else {
             System.out.println("Password does not meet complexity requirements.");
         }
 
         password = "pass";
-        Password.validatePasswordComplexity(password);
+        System.out.println(password);
+        PasswordChecker.validatePasswordComplexity(password);
 
     }
 
-
-
     // Check password complexity
-
     public static boolean checkPasswordComplexity(String password) {
         return checkPasswordComplexity(password, 8);
     }
@@ -94,8 +93,5 @@ public class Password {
         }
         return minimumLength && hasUppercase && hasLowercase && hasDigit && hasSpecialChar;
     }
-
-
-
 
 }

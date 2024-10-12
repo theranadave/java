@@ -12,7 +12,10 @@ import java.io.PrintWriter;
 //import java.io.Writer;
 
 public class PasswordStore {
-    public static String credentialFileName = "data.csv";
+    private static final String CREDENTIALFILENAME = "data.csv";
+    private static final String ALGORITHM = "AES";
+    private static final String TRANSFORMATION = "AES";
+    private static final String SALT = "12345";
 
 	public static void main(String[] arg) {
         List<List<String>> data  = PasswordStore.getData();
@@ -37,7 +40,7 @@ public class PasswordStore {
 
     private static List<List<String>> loadData() throws FileNotFoundException {
         List<List<String>> records = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(credentialFileName))) {
+        try (Scanner scanner = new Scanner(new File(CREDENTIALFILENAME))) {
             System.out.println("Loading data from credential file.");
             while (scanner.hasNextLine()) {          
                 records.add(getRecordFromLine(scanner.nextLine()));
@@ -58,7 +61,7 @@ public class PasswordStore {
     }
 
     private static void createCredentialFile() {
-        File csvOutputFile = new File(credentialFileName);
+        File csvOutputFile = new File(CREDENTIALFILENAME);
         try {
             csvOutputFile.createNewFile();
             System.out.println("Created credential file."); 
@@ -73,7 +76,7 @@ public class PasswordStore {
         PasswordStore.createCredentialFile();
         
         
-        try (PrintWriter writer = new PrintWriter(credentialFileName, "utf-8")) {
+        try (PrintWriter writer = new PrintWriter(CREDENTIALFILENAME, "utf-8")) {
             for (int i = 0; i < data.size(); i++) {
                 List<String> record = data.get(i); 
                 writer.println(record.get(0) + "," + 
@@ -92,7 +95,7 @@ public class PasswordStore {
     }
 
     private static void deleteCredentialFile() {
-        File csvOutputFile = new File(credentialFileName);
+        File csvOutputFile = new File(CREDENTIALFILENAME);
         csvOutputFile.delete();
         System.out.println("Removed credential file."); 
     }
@@ -103,7 +106,7 @@ public class PasswordStore {
         PasswordStore.createCredentialFile();
         boolean removed = false;
 
-        try (PrintWriter writer = new PrintWriter(credentialFileName, "utf-8")) {
+        try (PrintWriter writer = new PrintWriter(CREDENTIALFILENAME, "utf-8")) {
             for (int i = 0; i < data.size(); i++) {
                 List<String> record = data.get(i); 
                 if (record.get(0).equals(website) && record.get(1).equals(username) ){

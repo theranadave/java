@@ -96,11 +96,13 @@ public class CredentialManager {
         Scanner input=new Scanner(System.in);
         System.out.print("Enter website (or Exit): ");
         String website=input.nextLine();
+        if (website.equals("Exit")) {
+            return;
+        }
         System.out.print("Enter username: ");
         String username=input.nextLine();
         System.out.print("Enter password: ");
         String password=input.nextLine();
-
         PasswordStore.addData(website, username, password);
 
     }

@@ -5,11 +5,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, there!");
-      //  Credentials.retrieveCredentials();
-        int choice  = UserInterface.showMenu();
-	    System.out.println("You choice is : "+choice);
-        App.getOption(choice);
-
+        int choice;
+        do {
+            choice = UserInterface.showMenu();
+            System.out.println("You choice is : "+choice);
+            App.getOption(choice);
+        } while(choice != 0);
     }
 
     static void getOption(int choice)
