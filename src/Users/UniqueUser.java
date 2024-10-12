@@ -1,4 +1,5 @@
 package Users;
+import Password.PasswordGenerator;
 
 public class UniqueUser extends User {
     public UniqueUser(String username, String password) {
@@ -7,12 +8,14 @@ public class UniqueUser extends User {
     }
 
     public String getNewUser() {
-        //create tmp password
+        //check user does not exist 
         return "fixme";
     }
 
     public String getNewPassword() {
         //create tmp password
-        return "fixme";
+        String pass =  PasswordGenerator.generatePassword(false);
+        setPassword(tempPassword);        
+        return pass;
     }
 }

@@ -6,7 +6,8 @@ import java.util.Base64;
 public class DisposableUser extends User {
 
     // Secure random instance for generating random strings
-    private static final SecureRandom random = new SecureRandom();
+    private static final SecureRandom RANDOM = new SecureRandom();
+    private static final int DEFAULT_LENGTH = 16;
 
     public static void main(String[] args) {
         // Create a new User
@@ -24,7 +25,7 @@ public class DisposableUser extends User {
         System.out.println("Temporary Password: " + newPassword);
 
         newUsername = tempUser.getNewUser("dave");
-        newPassword = tempUser.getNewPassword(9);
+        newPassword = tempUser.getNewPassword(8);
 
         System.out.println("Temporary Username: " + newUsername);
         System.out.println("Temporary Password: " + newPassword);
@@ -39,7 +40,7 @@ public class DisposableUser extends User {
     // Generate a new temporary username (e.g., username + random number)
     public String getNewUser() {
         // Generate random username
-        String tempUsername = "temp_" + random.nextInt(10000);
+        String tempUsername = "temp_" + RANDOM.nextInt(10000);
         // Update the username in the parent class (User)
         setUsername(tempUsername); 
         return tempUsername;
@@ -58,7 +59,7 @@ public class DisposableUser extends User {
     // Generate a new temporary password
     public String getNewPassword() {
         // Create a random password with 10 characters
-        String tempPassword = generateRandomPassword(10); 
+        String tempPassword = generateRandomPassword(DEFAULT_LENGTH); 
         // Update the password in the parent class (User)
         setPassword(tempPassword); 
         return tempPassword;
@@ -76,9 +77,9 @@ public class DisposableUser extends User {
     // Utility method to generate a random password
     private String generateRandomPassword(int length) {
         byte[] randomBytes = new byte[length];
-        random.nextBytes(randomBytes);
+        RANDOM.nextBytes(randomBytes);
         // Encoding as a base64 string for readability
-        return Base64.getEncoder().encodeToString(randomBytes); 
+        return Base64.getEncoder().encodeToString(randomBytes).substring(0,length); 
     }
 }
 

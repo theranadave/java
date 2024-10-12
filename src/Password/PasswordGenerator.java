@@ -18,7 +18,7 @@ public class PasswordGenerator {
     public static String generatePassword(boolean includeSpecialCharacters) {
         return generatePassword(DEFAULT_LENGTH, includeSpecialCharacters);
     }
-    
+
     public static String generatePassword(int length, boolean includeSpecialCharacters) {
         StringBuilder characterSet = new StringBuilder(LOWERCASE + UPPERCASE + DIGITS);
         if (includeSpecialCharacters) {
@@ -29,6 +29,7 @@ public class PasswordGenerator {
         StringBuilder password = new StringBuilder(length);
 
         for (int i = 0; i < length; i++) {
+            // pull a random char
             int index = random.nextInt(characterSet.length());
             password.append(characterSet.charAt(index));
         }

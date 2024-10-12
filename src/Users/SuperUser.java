@@ -1,6 +1,9 @@
 package Users;
 
+import Password.PasswordGenerator;
+
 public class SuperUser extends User {
+    private static final int DEFAULT_LENGTH = 16;
 
     public SuperUser(String username, String password) {
         super(username, password);
@@ -14,9 +17,9 @@ public class SuperUser extends User {
     }
 
     public String getNewPassword() {
-        //create tmp password
-        //UserPassword upassword = new UserNamePassword("admin");
-        return "upassword";
+        String tempPassword = PasswordGenerator.generatePassword(DEFAULT_LENGTH,false);
+        setPassword(tempPassword); 
+        return tempPassword;
     }
 
 }
