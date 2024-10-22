@@ -3,6 +3,8 @@ import java.time.LocalDate;
 import Utils.DateOfBirth;
 
 public class User implements Person{
+
+    protected String name;
     protected String username, password;
     protected String auth_type;
     private LocalDate dateOfBirth;

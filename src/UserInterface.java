@@ -23,13 +23,19 @@ public class UserInterface {
         System.out.println("7. Delete user.");
         System.out.println("8. Print usernames/passwords for website.");
         System.out.println("0. Exit.");
+        System.out.println("A. Raise unchecked exception.");
         System.out.println("************************\n");
         System.out.print("Enter choice: "); // keeps to same line!
         String choice=input.nextLine();
-
+        
         try {
             result = Integer.valueOf(choice);
         } catch (NumberFormatException e) {
+            if (choice.equals("A")){
+                // unchecked exception
+                System.out.println("Raise unchecked exception.");
+                result = Integer.valueOf(choice);
+            } 
             System.out.println("Invalid Choice, defaulting to exit.");
             result = 0;
         }

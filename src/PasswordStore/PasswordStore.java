@@ -31,7 +31,7 @@ public class PasswordStore {
             List<List<String>> data = PasswordStore.loadData();
 	        //System.out.println("You choice is : "+data);
             return data;
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e){ // checked exception
             System.out.println("No credential file found."); 
             PasswordStore.createCredentialFile();
         }

@@ -8,8 +8,8 @@ o	LVTI
 •	interfaces
 •	inheritance
 o	overriding and polymorphism
-o	contrast super() and super.
-•	exceptions (checked and unchecked)
+o	contrast super() ✓ and super ✓
+•	exceptions (checked ✓ and unchecked ✓)
 •	enums
 •	arrays
 •	use of Java Core API (String, StringBuilder, List/ArrayList, Date API)
@@ -28,3 +28,7 @@ o	method references
 Extra marks:
 •	any topics from Java 22 and/or 23 - be sure to clearly explain these topics and what you had to do to get the newer code to compile/run
 •	consistent updates to a public repository 
+
+
+
+✓

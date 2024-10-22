@@ -5,7 +5,7 @@ import Password.PasswordGenerator;
 public class AnonUser extends User {
 
     public AnonUser() {  
-        super();      
+        super(); // Calls the constructor of the superclass.      
         this.username = getNewUserName();
         this.password = getNewPassword();
         this.auth_type = "anon";
@@ -21,5 +21,15 @@ public class AnonUser extends User {
         setPassword(password); 
         return password;
     }
+
+    
+    public String getType() {
+        return "anon_user";
+    }
+
+    public String returnType() {
+        return super.getType(); // calls the superclass's getType method.
+    }
+
 }
 
