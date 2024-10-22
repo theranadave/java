@@ -7,7 +7,7 @@ o	LVTI
 •	encapsulation
 •	interfaces
 •	inheritance
-o	overriding and polymorphism
+o	overriding and polymorphism ✓
 o	contrast super() ✓ and super ✓
 •	exceptions (checked ✓ and unchecked ✓)
 •	enums

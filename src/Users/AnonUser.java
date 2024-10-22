@@ -16,13 +16,14 @@ public class AnonUser extends User {
         return username;
     }
 
+
     public String getNewPassword() {
         String password = PasswordGenerator.generatePassword(true);
         setPassword(password); 
         return password;
     }
 
-    
+    @Override // overrides the superclass
     public String getType() {
         return "anon_user";
     }
