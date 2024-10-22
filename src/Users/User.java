@@ -1,6 +1,6 @@
 package Users;
 
-public class User {
+public class User implements Person{
     protected String username;
     protected String password;
     protected String auth_type;
@@ -41,6 +41,30 @@ public class User {
     // Overridable method to display user information
     public String getUserDetails() {
         return "Username: " + username;
+    }
+
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getName'");
+    }
+
+    @Override
+    public void setName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setName'");
+    }
+
+    @Override
+    public String getDOB() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDOB'");
+    }
+
+    @Override
+    public void setDOB(String name) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setDOB'");
     }
 }
 

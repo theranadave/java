@@ -1,0 +1,30 @@
+Fundamentals:
+•	classes
+o	contrast this() and this.
+o	method overloading
+o	varargs
+o	LVTI
+•	encapsulation
+•	interfaces
+•	inheritance
+o	overriding and polymorphism
+o	contrast super() and super.
+•	exceptions (checked and unchecked)
+•	enums
+•	arrays
+•	use of Java Core API (String, StringBuilder, List/ArrayList, Date API)
+
+Advanced:
+•	call-by-value and defensive copying
+•	private, default and static interface methods
+•	records
+•	a custom immutable type
+•	lambdas (Predicate)
+o	discussion of ‘final’ or ‘effectively final’
+o	method references
+•	switch expressions and pattern matching
+•	sealed classes and interfaces
+
+Extra marks:
+•	any topics from Java 22 and/or 23 - be sure to clearly explain these topics and what you had to do to get the newer code to compile/run
+•	consistent updates to a public repository 
