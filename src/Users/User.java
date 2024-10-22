@@ -1,9 +1,11 @@
 package Users;
+import java.time.LocalDate;
+import Utils.DateOfBirth;
 
 public class User implements Person{
-    protected String username;
-    protected String password;
+    protected String username, password;
     protected String auth_type;
+    private LocalDate dateOfBirth;
 
     // Constructor to initialize username and password
     public User(String username, String password) {
@@ -32,13 +34,22 @@ public class User implements Person{
         this.password = password;
     }
 
+    // Getter for dateOfBirth
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+    
+    // Setter for dateOfBirth
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     // Getter for password
     public String getType() {
         return auth_type;
     }
-    
 
-    // Overridable method to display user information
+        // Overridable method to display user information
     public String getUserDetails() {
         return "Username: " + username;
     }
@@ -65,6 +76,16 @@ public class User implements Person{
     public void setDOB(String name) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setDOB'");
+    }
+
+    @Override
+    public boolean isOver18() {
+        // if not dob, return false, else check.
+        if (dateOfBirth != null) {
+            return DateOfBirth.over18(dateOfBirth);
+        } else {
+            return false;
+        }
     }
 }
 

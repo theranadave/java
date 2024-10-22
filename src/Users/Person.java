@@ -8,5 +8,6 @@ public interface Person {
     String getDOB();        
     void setDOB(String name);
 
+    boolean isOver18();
     
 }
