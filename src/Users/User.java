@@ -14,6 +14,22 @@ public class User implements Person{
         this.auth_type = "";
     }
 
+    public User(String username) {
+        this.username = username;
+        this.password = "";
+        this.auth_type = "";
+    }
+
+    public User() {
+        this.username = "";
+        this.password = "";
+        this.auth_type = "";
+    }
+
+    public String getAuthType() {
+        return auth_type;
+    }
+
     // Getter for username
     public String getUsername() {
         return username;

@@ -18,14 +18,14 @@ public class DisposableUser extends User {
         DisposableUser tempUser = new DisposableUser("oldUser", "oldPassword");
 
         // Generate new credentials for DisposableUser
-        String newUsername = tempUser.getNewUser();
+        String newUsername = tempUser.getNewUserName();
         String newPassword = tempUser.getNewPassword();
 
         System.out.println("Temporary Username: " + newUsername);
         System.out.println("Temporary Password: " + newPassword);
         System.out.println("Temp User Details: " + tempUser.getUserDetails());
 
-        newUsername = tempUser.getNewUser("dave");
+        newUsername = tempUser.getNewUserName("dave");
         newPassword = tempUser.getNewPassword(8);
 
         System.out.println("Temporary Username: " + newUsername);
@@ -39,8 +39,15 @@ public class DisposableUser extends User {
         this.auth_type = "disposable";
     }
 
+    public DisposableUser() {
+        super();
+        this.username = getNewUserName();
+        this.password = getNewPassword();
+        this.auth_type = "disposable";
+    }
+
     // Generate a new temporary username (e.g., username + random number)
-    public String getNewUser() {
+    public String getNewUserName() {
         // Generate random username
         String tempUsername = "temp_" + RANDOM.nextInt(10000);
         // Update the username in the parent class (User)
@@ -49,7 +56,7 @@ public class DisposableUser extends User {
     }
 
     // Generate a new temporary username (e.g., username + random number)
-    public String getNewUser(String s) {
+    public String getNewUserName(String s) {
         // Generate random username
         String hash = Integer.toHexString(s.hashCode());
         String tempUsername = s + "_" + hash; 

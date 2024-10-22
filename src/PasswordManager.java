@@ -3,13 +3,14 @@ import java.util.Scanner;
 public class PasswordManager {
 	public static void main(String[] arg)
 	{
-        PasswordManager pm=new PasswordManager();
+        PasswordManager pm = new PasswordManager();
 	    Scanner sc = new Scanner(System.in);
 	    System.out.print("Enter user id : ");
 	    String userId=sc.nextLine();	
 	    System.out.println("Password for user id is : " + pm.getPassword(userId));
 
         boolean isUnique = pm.isUniquePassword(userId);
+		System.out.println(isUnique);
 
 	}
     

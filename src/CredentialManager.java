@@ -1,5 +1,11 @@
 import java.util.Scanner;
+
+import Password.PasswordGenerator;
 import PasswordStore.PasswordStore;
+import Users.AnonUser;
+import Users.DisposableUser;
+import Users.User;
+
 import java.util.List;
 
 public class CredentialManager {
@@ -8,9 +14,10 @@ public class CredentialManager {
         // String website = "ebay";
         // String username = "dave";
         // String password = "dave";
-        //Credentials.retrieveCredentials();
+        //CredentialManager.retrieveCredentials();
         //PasswordStore.addData(website, username, password);
         //PasswordStore.removeData(website, username);
+        CredentialManager.generateCredentials();
 	}
 
     public static void retrieveCredentials() {   
@@ -56,6 +63,8 @@ public class CredentialManager {
 	}
 
     public static void getWebsiteDetails(String website){
+        //System.out.println("getWebsiteDetails");
+        System.out.println("=====================\n");
         List<List<String>> data = PasswordStore.getData();  
         boolean found=false;
         for(List<String> entry: data){
@@ -69,10 +78,12 @@ public class CredentialManager {
         if (!found){
             System.out.println("No entry found for website: "+website);
         }
+        System.out.println("=====================\n");
         return;
     }  
 
     public static void getWebsiteDetails(String website, String username) {
+        System.out.println("=====================\n");
         List<List<String>> data = PasswordStore.getData();  
         boolean found=false;
         for(List<String> entry: data){
@@ -89,6 +100,7 @@ public class CredentialManager {
             System.out.println("No entry found for user: "+
             username+ " at website: "+website);
         }
+        System.out.println("=====================\n");
         return;
     }
 
@@ -101,6 +113,7 @@ public class CredentialManager {
         }
         System.out.print("Enter username: ");
         String username=input.nextLine();
+       
         System.out.print("Enter password: ");
         String password=input.nextLine();
         PasswordStore.addData(website, username, password);
@@ -108,12 +121,14 @@ public class CredentialManager {
     }
 
     public static void deleteCredentials() {
+        System.out.println("=====================\n");
         Scanner input=new Scanner(System.in);
         System.out.print("Enter website (or Exit): ");
         String website=input.nextLine();
         System.out.print("Enter username: ");
         String username=input.nextLine();
         PasswordStore.removeData(website, username);
+        System.out.println("=====================\n");
     }  
 
     public static void dumpData(){
@@ -125,6 +140,52 @@ public class CredentialManager {
             "\n Found for website: "+ entry.get(0)); 
         }  
         return;
+    }
+
+    public static void generateCredentials() {
+
+        String username, password;
+        User user;
+
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter website (or Exit): ");
+        String website=input.nextLine();
+        if (website.equals("Exit")) {
+            return;
+        }
+
+        System.out.println("Choose from the following options:");
+        System.out.println("1. Manual username for website.");
+        System.out.println("2. AnonUser for website.");
+        System.out.println("3. DisposableUser for website.");
+        System.out.print("Enter choice: "); // keeps to same line!
+        String choice=input.nextLine();
+
+        switch(choice){
+            case "1":
+                System.out.print("Enter username: ");
+                username=input.nextLine();
+                password = PasswordGenerator.generatePassword(false);
+                user = new User(username, password);
+                break;
+            case "2": 
+                user = new AnonUser();
+                username= user.getUsername();
+                password = user.getPassword();
+                System.out.println("Generated Anon Username is: " + username);  
+                break; 
+            case "3":
+                user = new DisposableUser();
+                username= user.getUsername();
+                password = user.getPassword();
+                System.out.println("Generated Disposable Username is: " + username);  
+                break; 
+            default:
+                System.out.print("Exiting.");
+                return;    
+        }
+        System.out.println("Generated Password is: " + password);
+        PasswordStore.addData(website, username, password);    
     }  
 
 }

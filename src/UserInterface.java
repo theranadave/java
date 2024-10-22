@@ -16,11 +16,12 @@ public class UserInterface {
         System.out.println("Choose from the following options:");
         System.out.println("1. Retrieve username/password for website.");
         System.out.println("2. Create username/password for a website.");
-        System.out.println("3. Delete username/password for a website.");
-        System.out.println("4. Change a username for a website.");
-        System.out.println("5. Change a password for a website.");
-        System.out.println("6. Delete user.");
-        System.out.println("7. Print usernames/passwords for website.");
+        System.out.println("3. Generate username/password for a website.");
+        System.out.println("4. Delete username/password for a website.");
+        System.out.println("5. Change a username for a website.");
+        System.out.println("6. Change a password for a website.");
+        System.out.println("7. Delete user.");
+        System.out.println("8. Print usernames/passwords for website.");
         System.out.println("0. Exit.");
         System.out.println("************************\n");
         System.out.print("Enter choice: "); // keeps to same line!

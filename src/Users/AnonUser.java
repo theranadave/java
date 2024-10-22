@@ -1,20 +1,25 @@
 package Users;
 
+import Password.PasswordGenerator;
+
 public class AnonUser extends User {
 
-    public AnonUser(String username, String password) {
-        super(username, password);
+    public AnonUser() {  
+        super();      
+        this.username = getNewUserName();
+        this.password = getNewPassword();
         this.auth_type = "anon";
     }
 
-    public String getNewUser() {
-        //create tmp password
-        return "fixme";
+    public String getNewUserName() {
+        String username = PasswordGenerator.generatePassword(8, false);
+        return username;
     }
 
     public String getNewPassword() {
-        //create tmp password
-        return "fixme";
+        String password = PasswordGenerator.generatePassword(true);
+        setPassword(password); 
+        return password;
     }
 }
 

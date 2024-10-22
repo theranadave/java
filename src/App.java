@@ -25,19 +25,23 @@ public class App {
                 CredentialManager.createCredentials();
                 break;
             case 3:
+                System.out.println("Generate username/password for a website.");
+                CredentialManager.generateCredentials();
+                break;
+            case 4:
                 System.out.println("Delete username/password for a website.");
                 CredentialManager.deleteCredentials();
                 break;
-            case 4:
+            case 5:
                 System.out.println("Change a username for a website.");
                 break;
-            case 5:
+            case 6:
                 System.out.println("Change a password for a website.");
                 break;
-            case 6:
+            case 7:
                 System.out.println("Delete user.");
                 break;
-            case 7:
+            case 8:
                 System.out.println("Print usernames/passwords for website.");
                 break;
             case 99:

@@ -9,5 +9,7 @@ public interface Person {
     void setDOB(String name);
 
     boolean isOver18();
+
+    String getAuthType();    
     
 }
